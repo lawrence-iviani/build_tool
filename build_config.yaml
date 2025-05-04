@@ -1,0 +1,17 @@
+zip_code_prefix: "HelloWorldApp"
+
+winpython_path: "build_goodies/python-3.12.3.amd64"
+
+fixed_scripts:
+  setup_script: null
+  run_script: null
+
+entry_points:
+  main: "main.py"
+  launcher: "hello_gui.py"
+
+goodies:
+  license_file: "build_goodies/LICENSE.txt"
+  extras_folder: "build_goodies/extra_assets"
+  readmes:
+    - "build_goodies/README.txt"

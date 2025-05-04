@@ -1,0 +1,10 @@
+[project]
+name = "portable-builder"
+version = "0.4.0"
+description = "Generic tool to create a zip-based portable Python app package"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["pyyaml", "jinja2"]
+
+[project.scripts]
+build-zip = "build_tool.cli:main"

@@ -1,0 +1,24 @@
+@echo off
+
+SET WINPYTHON_PATH=%~dp0\{{ python_dir }}
+SET PYTHON_BIN=%WINPYTHON_PATH%\python.exe
+SET VENV_DIR=%~dp0venv
+SET REQUIREMENTS_FILE=%~dp0\app\requirements.txt
+
+IF NOT EXIST "%VENV_DIR%" (
+    echo Creating virtual environment...
+    "%PYTHON_BIN%" -m venv "%VENV_DIR%"
+    IF ERRORLEVEL 1 exit /b 1
+)
+
+CALL "%VENV_DIR%\Scripts\activate.bat" || exit /b 1
+
+python.exe -m pip install --upgrade pip || exit /b 1
+pip install -r "%REQUIREMENTS_FILE%" || exit /b 1
+
+cd "%~dp0app"
+python {{ main_entry }}
+
+pause
+CALL deactivate
+exit /b 0

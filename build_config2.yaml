@@ -1,0 +1,16 @@
+app_name: "HelloWorldApp"
+zip_app_path: "D:\\development\\build_tool\\examples"
+# app must be in the form of app_name-version
+
+python_path: "D:\\Python Interpreters\\python-3.12.3.amd64"
+python_path_destination: "python-3.12-win"
+build_root_path: ".\\builds\\tmp"
+
+entry_points:
+  main: "main_folder\\main.py"
+
+goodies:
+  license_file: "D:\\development\\build_tool\\examples\\HelloWorldApp\\LICENSE.txt"
+  extras_folder: "D:\\development\\build_tool\\examples\\HelloWorldApp\\extras"
+  readmes:
+    - "D:\\development\\build_tool\\examples\\HelloWorldApp\\README.txt"
