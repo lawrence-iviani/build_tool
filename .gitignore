@@ -160,4 +160,5 @@ cython_debug/
 #.idea/
 /.idea
 /builds
+/builds/tmp
 examples/HelloWorldApp-master.zip
