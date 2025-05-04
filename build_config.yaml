@@ -1,17 +1,16 @@
-zip_code_prefix: "HelloWorldApp"
+app_name: "HelloWorldApp"
+zip_app_path: "D:\\development\\build_tool\\examples"
+# app must be in the form of app_name-version
 
-winpython_path: "build_goodies/python-3.12.3.amd64"
-
-fixed_scripts:
-  setup_script: null
-  run_script: null
+python_path: "D:\\Python Interpreters\\python-3.12.3.amd64"
+python_path_destination: "python-3.12-win"
+build_root_path: ".\\builds\\tmp"
 
 entry_points:
-  main: "main.py"
-  launcher: "hello_gui.py"
+  main: "main_folder\\main.py"
 
 goodies:
-  license_file: "build_goodies/LICENSE.txt"
-  extras_folder: "build_goodies/extra_assets"
+  license_file: "D:\\development\\build_tool\\examples\\HelloWorldApp\\LICENSE.txt"
+  extras_folder: "D:\\development\\build_tool\\examples\\HelloWorldApp\\extras"
   readmes:
-    - "build_goodies/README.txt"
+    - "D:\\development\\build_tool\\examples\\HelloWorldApp\\README.txt"

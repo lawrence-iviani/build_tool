@@ -39,11 +39,17 @@ def zip_package(cfg):
     shutil.make_archive(archive_name, 'zip', cfg.portable_package)
     print(f"ZIP created: {archive_name}.zip")
 
-def build_all(config_path=DEFAULT_CONFIG_PATH, skip_zip=False):
+def build_all(config_path=None, skip_zip=False):
+    config_path = DEFAULT_CONFIG_PATH if config_path is None else config_path
     cfg = BuildConfig(config_path=config_path)
     print(f"Building portable package at: {cfg.portable_package}")
+    print(f"Building Preparing Structure")
     create_structure(cfg.portable_package)
+    print(f"Extracting and Copy")
     extract_and_copy_all(cfg)
+    print(f"Prepare Scripts")
     render_scripts(cfg)
     if not skip_zip:
+        print(f"Compressing")
         zip_package(cfg)
+    print(f"Process terminated")
