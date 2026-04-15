@@ -10,6 +10,9 @@ IF NOT EXIST "%VENV_DIR%" (
 )
 
 CALL "%VENV_DIR%\Scripts\activate.bat" || exit /b 1
+{% for command in run_hooks %}
+{{ command }} || exit /b 1
+{% endfor %}
 
 cd "%~dp0app"
 python {{ main_entry }}

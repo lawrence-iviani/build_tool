@@ -15,6 +15,9 @@ CALL "%VENV_DIR%\Scripts\activate.bat" || exit /b 1
 
 python.exe -m pip install --upgrade pip || exit /b 1
 pip install -r "%REQUIREMENTS_FILE%" || exit /b 1
+{% for command in setup_hooks %}
+{{ command }} || exit /b 1
+{% endfor %}
 
 cd "%~dp0app"
 python {{ main_entry }}
